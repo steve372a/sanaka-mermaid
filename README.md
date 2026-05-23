@@ -22,16 +22,14 @@ npm start
 
 ## 容器运行
 
-* 拉取：
+* 构建：
 ```bash
-docker pull ghcr.io/steve372a/sanaka-mermaid:latest
-podman pull ghcr.io/steve372a/sanaka-mermaid:latest
+docker build -t sanaka-mermaid:latest .
 ```
 
 * 运行：
 ```bash
 docker run --rm -p 3000:3000 sanaka-mermaid:latest
-podman run --rm -p 3000:3000 sanaka-mermaid:latest
 ```
 
 ---
