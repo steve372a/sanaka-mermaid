@@ -4,7 +4,13 @@
 
 使用 Node.js 启动静态服务。
 
-## 启动
+---
+
+## 本地部署
+
+依赖：Node.js
+
+* 输入：
 
 ```bash
 npm start
@@ -12,63 +18,23 @@ npm start
 
 启动后访问 [http://localhost:3000](http://localhost:3000)。
 
+---
+
 ## 容器运行
 
-构建镜像：
-
+* 拉取：
 ```bash
-docker build -t mermaid-sanakaprix .
+docker pull ghcr.io/steve372a/sanaka-mermaid:latest
+podman pull ghcr.io/steve372a/sanaka-mermaid:latest
 ```
 
-或：
-
+* 运行：
 ```bash
-podman build -t mermaid-sanakaprix .
+docker run --rm -p 3000:3000 sanaka-mermaid:latest
+podman run --rm -p 3000:3000 sanaka-mermaid:latest
 ```
 
-运行容器：
-
-```bash
-docker run --rm -p 3000:3000 mermaid-sanakaprix
-```
-
-或：
-
-```bash
-podman run --rm -p 3000:3000 mermaid-sanakaprix
-```
-
-然后访问 [http://localhost:3000](http://localhost:3000)。
-
-## 发布镜像
-
-仓库里已包含 GitHub Actions 工作流 [release.yml](/Users/steve372dzudo/hexo/vibecoding/.github/workflows/release.yml)。
-
-发布方式：
-
-```bash
-git tag v1.0.0
-git push origin v1.0.0
-```
-
-触发后会自动：
-
-- 创建 GitHub Release
-- 构建多架构镜像
-- 推送到 `ghcr.io/<owner>/<repo>:v1.0.0`
-- 同时更新 `ghcr.io/<owner>/<repo>:latest`
-
-拉取示例：
-
-```bash
-docker pull ghcr.io/<owner>/<repo>:latest
-```
-
-或：
-
-```bash
-podman pull ghcr.io/<owner>/<repo>:latest
-```
+---
 
 ## 功能
 
