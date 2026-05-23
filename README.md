@@ -86,3 +86,4 @@ podman pull ghcr.io/<owner>/<repo>:latest
   - `flowchart TD/BT/LR/RL`
   - 矩形、圆角、判断、圆形、子流程节点
   - `-->` 连线和 `|标签|` 连线标签
+# sanaka-mermaid
