@@ -1,5 +1,6 @@
 # Mermaid 拖拽生成器
 
+纯 vibe coding 生成，软件：Codex，模型：GPT-5.4
 使用 Node.js 启动静态服务。
 
 ## 启动
