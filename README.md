@@ -23,7 +23,7 @@ npm start
 ## 容器运行
 
 * 拉取：
-[参考 https://github.com/steve372a/sanaka-mermaid/pkgs/container/sanaka-mermaid](https://github.com/steve372a/sanaka-mermaid/pkgs/container/sanaka-mermaid)
+参考：https://github.com/steve372a/sanaka-mermaid/pkgs/container/sanaka-mermaid
 
 * 运行：
 ```bash
