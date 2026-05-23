@@ -16,25 +16,25 @@ npm start
 构建镜像：
 
 ```bash
-docker build -t mermaid-dnd-builder .
+docker build -t mermaid-sanakaprix .
 ```
 
 或：
 
 ```bash
-podman build -t mermaid-dnd-builder .
+podman build -t mermaid-sanakaprix .
 ```
 
 运行容器：
 
 ```bash
-docker run --rm -p 3000:3000 mermaid-dnd-builder
+docker run --rm -p 3000:3000 mermaid-sanakaprix
 ```
 
 或：
 
 ```bash
-podman run --rm -p 3000:3000 mermaid-dnd-builder
+podman run --rm -p 3000:3000 mermaid-sanakaprix
 ```
 
 然后访问 [http://localhost:3000](http://localhost:3000)。
