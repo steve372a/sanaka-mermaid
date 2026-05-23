@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mermaid 拖拽图表</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Node.js 本地工具</p>
+          <h1>Mermaid 拖拽生成器</h1>
+          <p class="sidebar-copy">
+            从左侧拖节点到画布，拖拽节点右侧圆点到其他节点左侧圆点即可连线。右侧会实时生成 Mermaid 代码与预览。
+          </p>
+        </div>
+
+        <section>
+          <div class="section-title-row">
+            <h2>节点库</h2>
+            <button id="reset-btn" class="ghost-btn" type="button">清空</button>
+          </div>
+          <div class="palette">
+            <button class="palette-item" draggable="true" data-shape="rect" data-label="开始">
+              <span class="shape rect"></span>
+              <span>矩形</span>
+            </button>
+            <button class="palette-item" draggable="true" data-shape="round" data-label="处理步骤">
+              <span class="shape round"></span>
+              <span>圆角</span>
+            </button>
+            <button class="palette-item" draggable="true" data-shape="diamond" data-label="判断">
+              <span class="shape diamond"></span>
+              <span>判断</span>
+            </button>
+            <button class="palette-item" draggable="true" data-shape="circle" data-label="结束">
+              <span class="shape circle"></span>
+              <span>圆形</span>
+            </button>
+            <button class="palette-item" draggable="true" data-shape="subroutine" data-label="子流程">
+              <span class="shape subroutine"></span>
+              <span>子流程</span>
+            </button>
+          </div>
+        </section>
+
+        <section>
+          <h2>已选中</h2>
+          <div id="inspector" class="inspector empty">
+            选中节点后可以修改文字；选中连线后可以写连线标签。
+          </div>
+        </section>
+      </aside>
+
+      <main class="workspace">
+        <section class="canvas-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">画布</p>
+              <h2>Flowchart Builder</h2>
+            </div>
+            <div class="header-actions">
+              <button id="fit-btn" type="button">整理视图</button>
+              <button id="export-json-btn" type="button">导出 JSON</button>
+              <label class="import-btn" for="import-json-input">导入 JSON</label>
+              <input id="import-json-input" type="file" accept="application/json" />
+            </div>
+          </div>
+
+          <div id="canvas" class="canvas" aria-label="Mermaid drag and drop canvas">
+            <div id="canvas-spacer" class="canvas-spacer" aria-hidden="true"></div>
+            <svg id="edge-layer" class="edge-layer"></svg>
+            <div class="canvas-hint">
+              把节点拖到这里，拖节点可重排，拖右侧连接点到别的节点左侧即可连线。
+            </div>
+          </div>
+        </section>
+
+        <section class="output-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">输出</p>
+              <h2>Mermaid 代码</h2>
+            </div>
+            <div class="header-actions">
+              <button id="apply-code-btn" type="button">应用代码</button>
+              <button id="copy-btn" type="button">复制代码</button>
+            </div>
+          </div>
+
+          <textarea id="mermaid-code" spellcheck="false"></textarea>
+
+          <div class="preview-header">
+            <h2>实时预览</h2>
+            <div class="header-actions">
+              <button id="export-svg-btn" type="button">保存 SVG</button>
+              <button id="export-png-btn" type="button">保存 PNG</button>
+              <span id="render-status" class="render-status">等待渲染</span>
+            </div>
+          </div>
+          <div id="preview" class="preview"></div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

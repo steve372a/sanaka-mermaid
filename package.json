@@ -1,0 +1,9 @@
+{
+  "name": "mermaid-dnd-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A local drag-and-drop Mermaid flowchart builder.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
